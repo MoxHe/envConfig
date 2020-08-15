@@ -1,0 +1,16 @@
+{
+  "suggest.noselect": false,
+  "coc.preferences.formatOnSaveFiletypes": [],
+  "explorer.width": 35,
+  "explorer.icon.enableNerdfont": true,
+  "explorer.previewAction.onHover": false,
+  "explorer.keyMappings": {
+    "<cr>": ["expandable?", "expand", "open"],
+    "v": "open:vsplit",
+    "h": false,
+    "l": false,
+    "i": "collapse:recursive",
+    "u": "cd",
+    "U": "gotoParent"
+  }
+}
