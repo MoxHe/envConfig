@@ -198,6 +198,7 @@ let g:coc_global_extensions = [
 \ 'coc-prettier',
 \ 'coc-python',
 \ 'coc-tsserver',
+\ 'coc-sh'
 \ ]
 
 
