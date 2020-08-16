@@ -91,7 +91,7 @@ hi DiffChange   gui=none    guifg=NONE          guibg=#305863
 hi DiffDelete   gui=none    guifg=NONE          guibg=#571319
 hi DiffText     gui=bold    guifg=NONE          guibg=#1e3940
 
-let g:python3_host_prog='/usr/local/opt/python@3.8/bin/python3'
+let g:python3_host_prog='/usr/local/bin/python3'
 let g:airline_theme = 'base16_gruvbox_dark_hard'
 let g:airline_powerline_fonts = 1
 " let g:airline#extensions#tabline#enabled = 1
@@ -338,7 +338,7 @@ nnoremap <C-w>h <C-w>s
 
 nnoremap <leader>fn :FZF<CR>
 nnoremap <leader>ff :Files<CR>
-nnoremap <leader>fg :GFiles<CR>
+nnoremap <leader>fg :GFiles --cache --others<CR>
 nnoremap <leader>fb :Buffers<CR>
 nnoremap <leader>fl :BLines<CR>
 nnoremap <leader>fc :Commits<CR>
@@ -404,7 +404,7 @@ command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options':['--tiebreak=end']}), <bang>0)
 
 command! -bang -nargs=? -complete=dir GFiles
-    \ call fzf#vim#gitfiles(<q-args>, fzf#vim#with_preview({'options': ['--tiebreak=end']}), <bang>0)
+    \ call fzf#vim#gitfiles(<q-args>, fzf#vim#with_preview({'options': '--tiebreak=end'}), <bang>0)
 
 command! -bang -nargs=? -complete=dir Buffers
     \ call fzf#vim#buffers(<q-args>, fzf#vim#with_preview({'options': ['--tiebreak=end']}), <bang>0)

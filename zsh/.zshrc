@@ -10,13 +10,13 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
+# PATH="$HOME/Library/Python/3.7/bin:${PATH}"
+# export PATH
+
 # Setting PATH for Python 3.7
 # The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
-export PATH
-
-PATH="$HOME/Library/Python/3.7/bin:${PATH}"
-export PATH
+# PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
+# export PATH
 
 export PATH="/usr/local/mysql/bin:$PATH"
 
@@ -25,6 +25,9 @@ export EDITOR="nvim"
 export BAT_THEME="gruvbox"
 
 alias vim="nvim"
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 # reset-cursor() {
 #   printf '\033]50;CursorShape=1\x7'

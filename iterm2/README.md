@@ -1,10 +1,6 @@
-1. Download iterm2
-2. Download nerd fonts:
-   brew tap homebrew/cask-fonts
-   brew cask install font-hack-nerd-font
-3. Go to iterm2 setting
-4. Import mox_iterm2.json profile and set it as default
-5. Make iterm2 as default terminal.
-6. Go to general -> window, deselect Native full screen windows
-7. Go to Keys -> Hotkey, select Show/hide all windows with a system-wide hotkey, and input control + option + i
-8. Go to Keys -> Key Bindings, delete Previous Tab and Next Tab
+1. Go to iterm2 setting
+2. Import mox_iterm2.json profile and set it as default
+3. Make iterm2 as default terminal.
+4. Go to general -> window, deselect Native full screen windows
+5. Go to Keys -> Hotkey, select Show/hide all windows with a system-wide hotkey, and input control + option + i
+6. Go to Keys -> Key Bindings, delete Previous Tab and Next Tab
