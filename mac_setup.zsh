@@ -143,6 +143,8 @@ sudo npm install -g neovim
 mkdir -p ~/.config/nvim/after/ftplugin
 mkdir -p ~/.config/bat/config
 mkdir -p ~/.config/bat/themes
+mkdir -p ~/.config/powerline/themes/tmux
+mkdir -p ~/.config/powerline/colorschemes/tmux
 
 # Hard link init.vim
 if [ -f ~/.config/nvim/init.vim ]; then
@@ -189,8 +191,52 @@ fi
 echo "Hard link gruvbox.tmTheme"
 ln ./bat/themes/gruvbox.tmTheme ~/.config/bat/themes/gruvbox.tmTheme
 
+# Update bat binary cache
+echo "Update bat binary cache..."
+bat cache --build
+
 echo "Sourcing .zshrc"
 source ~/.zshrc
+
+# Hard link powerline/colors.json
+if [ -f ~/.config/powerline/colors.json ]; then
+  echo "Rmeoved existing powerline/colors.json"
+  rm ~/.config/powerline/colors.json
+fi
+echo "Hard link powerline/colors.json"
+ln ./powerline/colors.json ~/.config/powerline/colors.json
+
+# Hard link powerline/config.json
+if [ -f ~/.config/powerline/config.json ]; then
+  echo "Rmeoved existing powerline/config.json"
+  rm ~/.config/powerline/config.json
+fi
+echo "Hard link powerline/config.json"
+ln ./powerline/config.json ~/.config/powerline/config.json
+
+# Hard link powerline/themes/tmux/default.json
+if [ -f ~/.config/powerline/themes/tmux/default.json ]; then
+  echo "Rmeoved existing powerline/themes/tmux/default.json"
+  rm ~/.config/powerline/themes/tmux/default.json
+fi
+echo "Hard link powerline/themes/tmux/default.json"
+ln ./powerline/themes/tmux/default.json ~/.config/powerline/themes/tmux/default.json
+
+# Hard link powerline/colorschemes/gruvbox_dark.json
+if [ -f ~/.config/powerline/colorschemes/gruvbox_dark.json ]; then
+  echo "Rmeoved existing powerline/colorschemes/gruvbox_dark.json"
+  rm ~/.config/powerline/colorschemes/gruvbox_dark.json
+fi
+echo "Hard link powerline/colorschemes/gruvbox_dark.json"
+ln ./powerline/colorschemes/gruvbox_dark.json ~/.config/powerline/colorschemes/gruvbox_dark.json
+
+# Hard link powerline/colorschemes/tmux/gruvbox_dark.json
+if [ -f ~/.config/powerline/colorschemes/tmux/gruvbox_dark.json ]; then
+  echo "Rmeoved existing powerline/colorschemes/tmux/gruvbox_dark.json"
+  rm ~/.config/powerline/colorschemes/tmux/gruvbox_dark.json
+fi
+echo "Hard link powerline/colorschemes/tmux/gruvbox_dark.json"
+ln ./powerline/colorschemes/tmux/gruvbox_dark.json ~/.config/powerline/colorschemes/tmux/gruvbox_dark.json
 
 # Install iterm2
 echo "Installing iterm2..."
