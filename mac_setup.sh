@@ -130,15 +130,67 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
 # Install node.js
 if [ ! $(nvm which current) ]; then
-  echo "Installing Node..."
+  echo "Installing Node.js..."
   nvm install stable
 else
-  echo "Node has already been installed. Skipped"
+  echo "Node.js has already been installed. Skipped"
 fi
 
 # Install node neovim
 echo "Installing node neovim..."
 sudo npm install -g neovim
+
+mkdir -p ~/.config/nvim/after/ftplugin
+mkdir -p ~/.config/bat/config
+mkdir -p ~/.config/bat/themes
+
+# Hard link init.vim
+if [ -f ~/.config/nvim/init.vim ]; then
+  echo "Rmeoved existing init.vim"
+  rm ~/.config/nvim/init.vim
+fi
+echo "Hard link init.vim"
+ln ./nvim/init.vim ~/.config/nvim/init.vim
+
+# Hard link fugitive.vim
+if [ -f ~/.config/nvim/after/ftplugin/fugitive.vim ]; then
+  echo "Rmeoved existing fugitive.vim"
+  rm ~/.config/nvim/after/ftplugin/fugitive.vim
+fi
+echo "Hard link fugitive.vim"
+ln ./nvim/after/ftplugin/fugitive.vim ~/.config/nvim/after/ftplugin/fugitive.vim
+
+# Hard link coc-settings.json
+if [ -f ~/.config/nvim/coc-settings.json ]; then
+  echo "Rmeoved existing coc-settings.json"
+  rm ~/.config/nvim/coc-settings.json
+fi
+echo "Hard link coc-settings.json"
+ln ./nvim/coc-settings.json ~/.config/nvim/coc-settings.json
+
+# Install vim plug manager
+echo "Installing vim plug manager"
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+# Hard link bat.conf
+if [ -f ~/.config/bat/config/bat.conf ]; then
+  echo "Rmeoved existing bat.conf"
+  rm ~/.config/bat/config/bat.conf
+fi
+echo "Hard link bat.conf"
+ln ./bat/config/bat.conf ~/.config/bat/config/bat.conf
+
+# Hard link gruvbox.tmTheme
+if [ -f ~/.config/bat/themes/gruvbox.tmTheme ]; then
+  echo "Rmeoved existing bat.conf"
+  rm ~/.config/bat/themes/gruvbox.tmTheme
+fi
+echo "Hard link gruvbox.tmTheme"
+ln ./bat/themes/gruvbox.tmTheme ~/.config/bat/themes/gruvbox.tmTheme
+
+echo "Sourcing .zshrc"
+source ~/.zshrc
 
 # Install iterm2
 echo "Installing iterm2..."
