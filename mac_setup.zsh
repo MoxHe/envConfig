@@ -146,6 +146,14 @@ mkdir -p ~/.config/bat/themes
 mkdir -p ~/.config/powerline/themes/tmux
 mkdir -p ~/.config/powerline/colorschemes/tmux
 
+# Hard link ~/.tmux.conf
+if [ -f ~/.tmux.conf ]; then
+  echo "Rmeoved existing ~/.tmux.conf"
+  rm ~/.tmux.conf
+fi
+echo "Hard link ~/.tmux.conf"
+ln ./tmux/.tmux.conf ~/.tmux.conf
+
 # Hard link init.vim
 if [ -f ~/.config/nvim/init.vim ]; then
   echo "Rmeoved existing init.vim"
