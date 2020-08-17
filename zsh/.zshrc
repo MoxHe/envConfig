@@ -27,7 +27,10 @@ export BAT_THEME="gruvbox"
 alias vim="nvim"
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# loading nvm is too show and nvm is not often used. So create an alias to load it on demand.
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+alias loadnvm=". ${NVM_DIR}/nvm.sh"
 
 # reset-cursor() {
 #   printf '\033]50;CursorShape=1\x7'
