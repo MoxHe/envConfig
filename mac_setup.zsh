@@ -117,6 +117,9 @@ fi
 echo "Hard link ~/.tmux.conf"
 ln ./tmux/.tmux.conf ~/.tmux.conf
 
+echo "Installing tmux plugin manager"
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 # Hard link init.vim
 if [ -f ~/.config/nvim/init.vim ]; then
   echo "Rmeoved existing init.vim"
