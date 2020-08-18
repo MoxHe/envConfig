@@ -219,5 +219,10 @@ echo "Installing nerd font..."
 brew tap homebrew/cask-fonts
 brew cask install font-hack-nerd-font
 
+echo "Updating terminfo to add abilities of showing italics and curly underline"
+tic -x ./terminfo/xterm-256color.terminfo
+tic -x ./terminfo/tmux.terminfo
+tic -x ./terminfo/tmux-256color.terminfo
+
 echo "\nDone!"
 
