@@ -94,7 +94,7 @@
         "gruvbox:light0_hard" : [230, "f9f5d7"],
         "gruvbox:light0"      : [229, "fbf1c7"],
         "gruvbox:light0_soft" : [228, "f2e5bc"],
-        "gruvbox:light1"      : [223, "ebdbb2"],
+        "gruvbox:light1"      : [223, "ebdab2"],
         "gruvbox:light2"      : [250, "d5c4a1"],
         "gruvbox:light3"      : [248, "bdae93"],
         "gruvbox:light4"      : [246, "a89984"],
@@ -106,7 +106,7 @@
         "gruvbox:bright_blue"    : [109, "83a598"],
         "gruvbox:bright_purple"  : [175, "d3869b"],
         "gruvbox:bright_aqua"    : [108, "8ec07c"],
-        "gruvbox:bright_orange"  : [208, "fe8019"],
+        "gruvbox:bright_orange"  : [208, "df5f02"],
 
         "gruvbox:neutral_red"    : [124, "cc241d"],
         "gruvbox:neutral_green"  : [106, "98971a"],

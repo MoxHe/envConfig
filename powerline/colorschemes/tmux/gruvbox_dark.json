@@ -6,9 +6,9 @@
 		"bell_status":          {"fg": "gruvbox:bright_red",        "bg": "gruvbox:dark1",    "attrs": []},
 		"window":               {"fg": "gray6",                     "bg": "gruvbox:dark1",    "attrs": []},
 		"window:divider":       {"fg": "gray4",                     "bg": "gruvbox:dark1",    "attrs": []},
-		"window:current":       {"fg": "gruvbox:dark0_hard",        "bg": "gruvbox:bright_green", "attrs": []},
-		"window_name":          {"fg": "gruvbox:dark0_hard",        "bg": "gruvbox:bright_green", "attrs": ["bold"]},
-		"session":              {"fg": "gruvbox:dark0_hard",        "bg": "gruvbox:bright_green",   "attrs": ["bold"]},
-		"session:prefix":       {"fg": "gruvbox:dark0_hard",        "bg": "gruvbox:bright_green", "attrs": ["bold"]}
+		"window:current":       {"fg": "gruvbox:dark1",        "bg": "gruvbox:bright_green", "attrs": []},
+		"window_name":          {"fg": "gruvbox:dark1",        "bg": "gruvbox:bright_green", "attrs": ["bold"]},
+		"session":              {"fg": "gruvbox:dark1",        "bg": "gruvbox:bright_green",   "attrs": ["bold"]},
+		"session:prefix":       {"fg": "gruvbox:dark1",        "bg": "gruvbox:bright_green", "attrs": ["bold"]}
 	}
 }

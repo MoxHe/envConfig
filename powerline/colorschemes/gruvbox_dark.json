@@ -14,9 +14,9 @@
 
 		"session":                    { "fg": "black", "bg": "gray10", "attrs": ["bold"] },
 
-		"date":                       { "fg": "white", "bg": "gruvbox:dark1", "attrs": [] },
-		"time":                       { "fg": "white", "bg": "gruvbox:dark1", "attrs": ["bold"] },
-		"time:divider":               { "fg": "white", "bg": "gruvbox:dark1", "attrs": [] },
+		"date":                       { "fg": "gruvbox:light1", "bg": "gruvbox:dark1", "attrs": [] },
+		"time":                       { "fg": "gruvbox:light1", "bg": "gruvbox:dark1", "attrs": ["bold"] },
+		"time:divider":               { "fg": "gruvbox:light1", "bg": "gruvbox:dark1", "attrs": [] },
 
 		"email_alert":                "warning:regular",
 		"email_alert_gradient":       { "fg": "white", "bg": "yellow_orange_red", "attrs": ["bold"] },
@@ -44,10 +44,10 @@
 		"cpu_load_percent":           { "fg": "gray8", "bg": "gray0", "attrs": [] },
 		"cpu_load_percent_gradient":  { "fg": "green_yellow_orange_red", "bg": "gray0", "attrs": [] },
 
-		"battery":                    { "fg": "gray8", "bg": "gruvbox:dark1", "attrs": [] },
-		"battery_gradient":           { "fg": "white_red", "bg": "gruvbox:dark1", "attrs": [] },
-		"battery_full":               { "fg": "red", "bg": "gruvbox:dark1", "attrs": [] },
-		"battery_empty":              { "fg": "white", "bg": "gruvbox:dark1", "attrs": [] },
+		"battery":                    { "fg": "gruvbox:light1", "bg": "gruvbox:dark1", "attrs": [] },
+		"battery_gradient":           { "fg": "gruvbox:light1", "bg": "gruvbox:dark1", "attrs": [] },
+		"battery_full":               { "fg": "gruvbox:light1", "bg": "gruvbox:dark1", "attrs": [] },
+		"battery_empty":              { "fg": "gruvbox:light1", "bg": "gruvbox:dark1", "attrs": [] },
 
 		"player":                     { "fg": "gruvbox:bright_green", "bg": "gruvbox:dark1", "attrs": [] },
 		"user":                       { "fg": "white", "bg": "darkblue", "attrs": ["bold"] },
