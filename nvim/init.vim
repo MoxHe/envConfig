@@ -97,7 +97,7 @@ let g:airline_theme = 'base16_gruvbox_dark_hard'
 let g:airline_powerline_fonts = 1
 " let g:airline#extensions#tabline#enabled = 1
 let g:indentLine_char_list = ['⎸']
-let g:indentLine_fileType = ['javascript', 'typescript', 'javascriptreact', 'json', 'yaml', 'typescriptreact']
+let g:indentLine_fileType = ['javascript', 'typescript', 'javascriptreact', 'json', 'yaml', 'typescriptreact', 'zsh', 'vim']
 let g:highlightedyank_highlight_duration = 250
 let g:javascript_plugin_jsdoc = 1
 
@@ -339,7 +339,7 @@ nnoremap <C-w>h <C-w>s
 
 nnoremap <leader>fn :FZF<CR>
 nnoremap <leader>ff :Files<CR>
-nnoremap <leader>fg :GFiles --cache --others<CR>
+nnoremap <leader>fg :GFiles --cache --others --exclude-standard<CR>
 nnoremap <leader>fb :Buffers<CR>
 nnoremap <leader>fl :BLines<CR>
 nnoremap <leader>fc :Commits<CR>
