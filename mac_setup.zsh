@@ -25,6 +25,7 @@ echo "Installing homebrew..."
 # Update Homebrew
 echo "Updating Homebrew..."
 brew update
+brew tap homebrew/cask-versions
 
 # Check for git, Install if we don't have it
 echo "Installing git..."
@@ -209,9 +210,13 @@ fi
 echo "Hard link powerline/colorschemes/tmux/gruvbox_dark.json"
 ln ./powerline/colorschemes/tmux/gruvbox_dark.json ~/.config/powerline/colorschemes/tmux/gruvbox_dark.json
 
+
+# Install java
+echo "Installing java11..."
+brew cask install java11
+
 # Install iterm2
 echo "Installing iterm2..."
-brew tap homebrew/cask-versions
 brew cask install iterm2-nightly
 
 # Install nerd font

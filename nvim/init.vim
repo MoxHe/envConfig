@@ -23,7 +23,7 @@ set updatetime=300
 set shortmess+=c
 set wildmenu
 set termguicolors
-set clipboard=unnamed
+set clipboard=unnamedplus
 set cursorline
 set hidden
 set list
@@ -34,6 +34,8 @@ set noequalalways
 set mouse=nv
 set guicursor=n-v-c-sm:block,i-c-ci-ve:ver25,r-cr-o:hor20
 set autoread
+" trailing space is on purpose for the next line
+set fcs=eob:\ 
 
 call plug#begin('~/.config/nvim/plugged')
 
@@ -97,11 +99,19 @@ let g:airline_theme = 'base16_gruvbox_dark_hard'
 let g:airline_powerline_fonts = 1
 " let g:airline#extensions#tabline#enabled = 1
 let g:indentLine_char_list = ['⎸']
-let g:indentLine_fileType = ['javascript', 'typescript', 'javascriptreact', 'json', 'yaml', 'typescriptreact', 'zsh', 'vim']
+let g:indentLine_fileType = ['javascript', 'java', 'typescript', 'javascriptreact', 'json', 'yaml', 'typescriptreact', 'zsh', 'vim']
 let g:highlightedyank_highlight_duration = 250
 let g:javascript_plugin_jsdoc = 1
 
+" let java_highlight_functions = 1
+let java_highlight_all = 1
 
+" copy relative path
+nmap cr :let @+ = expand("%p")<cr>
+" copy full path
+nmap cp :let @+ = expand("%:p")<cr>
+" copy file name
+nmap cf :let @+ = expand("%:t")<cr>
 " g Leader key
 let mapleader=" "
 nnoremap <Space> <Nop>
@@ -185,27 +195,28 @@ vmap y ygv<Esc>
 " endfunction
 "
 let g:coc_global_extensions = [
-\ 'coc-eslint',
-\ 'coc-json',
-\ 'coc-tsserver',
-\ 'coc-html',
-\ 'coc-css',
-\ 'coc-yaml',
-\ 'coc-highlight',
-\ 'coc-pairs',
-\ 'coc-vimlsp',
-\ 'coc-xml',
-\ 'coc-explorer',
-\ 'coc-prettier',
-\ 'coc-python',
-\ 'coc-tsserver',
-\ 'coc-sh'
-\ ]
+      \ 'coc-java',
+      \ 'coc-eslint',
+      \ 'coc-json',
+      \ 'coc-tsserver',
+      \ 'coc-html',
+      \ 'coc-css',
+      \ 'coc-yaml',
+      \ 'coc-highlight',
+      \ 'coc-pairs',
+      \ 'coc-vimlsp',
+      \ 'coc-xml',
+      \ 'coc-explorer',
+      \ 'coc-prettier',
+      \ 'coc-python',
+      \ 'coc-tsserver',
+      \ 'coc-sh'
+      \ ]
 
 
 " Coc Explorer
 nmap <silent> <M-n> :CocCommand explorer<CR>
-autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
+autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | set guicursor=a:ver25 | q | endif
 
 
 noremap <silent> <C-c> <Esc>
