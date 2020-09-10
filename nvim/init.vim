@@ -68,7 +68,8 @@ Plug 'haya14busa/is.vim'
 Plug 'dyng/ctrlsf.vim'
 Plug 'djoshea/vim-autoread'
 Plug 'mhinz/vim-startify'
-" Plug 'jremmen/vim-ripgrep'
+Plug 'alvan/vim-closetag'
+Plug 'jremmen/vim-ripgrep'
 
 call plug#end()
 " let g:gruvbox_material_background = 'hard'
@@ -195,6 +196,7 @@ vmap y ygv<Esc>
 " endfunction
 "
 let g:coc_global_extensions = [
+      \ 'coc-pairs',
       \ 'coc-java',
       \ 'coc-eslint',
       \ 'coc-json',
@@ -203,7 +205,6 @@ let g:coc_global_extensions = [
       \ 'coc-css',
       \ 'coc-yaml',
       \ 'coc-highlight',
-      \ 'coc-pairs',
       \ 'coc-vimlsp',
       \ 'coc-xml',
       \ 'coc-explorer',
@@ -217,7 +218,6 @@ let g:coc_global_extensions = [
 " Coc Explorer
 nmap <silent> <M-n> :CocCommand explorer<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | set guicursor=a:ver25 | q | endif
-
 
 noremap <silent> <C-c> <Esc>
 cnoremap <C-c> <Esc>
@@ -243,6 +243,10 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+" navigate pop up with <C-j> and <C-k>
+inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -485,3 +489,47 @@ nmap     <M-f>p <Plug>CtrlSFPwordPath
 nnoremap <M-f>o :CtrlSFOpen<CR>
 nnoremap <M-f>t :CtrlSFToggle<CR>
 inoremap <M-f>t <Esc>:CtrlSFToggle<CR>
+
+
+
+" closeTag
+" filenames like *.xml, *.html, *.xhtml, ...
+" These are the file extensions where this plugin is enabled.
+"
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.tsx'
+
+" filenames like *.xml, *.xhtml, ...
+" This will make the list of non-closing tags self-closing in the specified files.
+"
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
+
+" filetypes like xml, html, xhtml, ...
+" These are the file types where this plugin is enabled.
+"
+let g:closetag_filetypes = 'html,xhtml,phtml'
+
+" filetypes like xml, xhtml, ...
+" This will make the list of non-closing tags self-closing in the specified files.
+"
+let g:closetag_xhtml_filetypes = 'xhtml,jsx'
+
+" integer value [0|1]
+" This will make the list of non-closing tags case-sensitive (e.g. `<Link>` will be closed while `<link>` won't.)
+"
+let g:closetag_emptyTags_caseSensitive = 1
+
+" dict
+" Disables auto-close if not in a "valid" region (based on filetype)
+"
+let g:closetag_regions = {
+    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
+    \ 'javascript.jsx': 'jsxRegion',
+    \ }
+
+" Shortcut for closing tags, default is '>'
+"
+let g:closetag_shortcut = '>'
+
+" Add > at current position without closing the current tag, default is ''
+"
+let g:closetag_close_shortcut = '<leader>>'

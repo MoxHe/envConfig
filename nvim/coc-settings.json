@@ -22,5 +22,6 @@
     "i": "collapse:recursive",
     "u": "cd",
     "U": "gotoParent"
-  }
+  },
+  "pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"]
 }
