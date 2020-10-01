@@ -70,6 +70,7 @@ Plug 'djoshea/vim-autoread'
 Plug 'mhinz/vim-startify'
 Plug 'alvan/vim-closetag'
 Plug 'jremmen/vim-ripgrep'
+Plug 'lervag/vimtex'
 
 call plug#end()
 " let g:gruvbox_material_background = 'hard'
@@ -82,6 +83,7 @@ let g:gruvbox_invert_selection = 0
 let g:gruvbox_italicize_comments = 1
 let g:gruvbox_underline = 1
 let g:gruvbox_sign_column = 'none'
+let g:tex_flavor = 'latex'
 
 :au VimLeave * set guicursor=a:ver25
 
@@ -196,6 +198,7 @@ vmap y ygv<Esc>
 " endfunction
 "
 let g:coc_global_extensions = [
+      \ 'coc-vimtex',
       \ 'coc-pairs',
       \ 'coc-java',
       \ 'coc-eslint',
@@ -532,4 +535,3 @@ let g:closetag_shortcut = '>'
 
 " Add > at current position without closing the current tag, default is ''
 "
-let g:closetag_close_shortcut = '<leader>>'
