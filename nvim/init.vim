@@ -69,7 +69,6 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'djoshea/vim-autoread'
 Plug 'mhinz/vim-startify'
 Plug 'alvan/vim-closetag'
-Plug 'jremmen/vim-ripgrep'
 Plug 'lervag/vimtex'
 
 call plug#end()

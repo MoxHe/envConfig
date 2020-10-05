@@ -103,3 +103,11 @@ if [ -f ~/.config/powerline/colorschemes/tmux/gruvbox_dark.json ]; then
 fi
 echo "Hard link powerline/colorschemes/tmux/gruvbox_dark.json"
 ln ./powerline/colorschemes/tmux/gruvbox_dark.json ~/.config/powerline/colorschemes/tmux/gruvbox_dark.json
+
+# Hard link nvim/github-markdown.css
+if [ -f ~/.config/nvim/github-markdown.css ]; then
+  echo "Rmeoved existing github-markdown.css"
+  rm ~/.config/nvim/github-markdown.css
+fi
+echo "Hard link github-markdown.css"
+ln ./nvim/github-markdown.css ~/.config/nvim/github-markdown.css
