@@ -226,14 +226,9 @@ fi
 echo "Copy com.googlecode.iterm2.plist"
 cp ./iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
 
-
 # Install java
 echo "Installing java11..."
 brew cask install java11
-
-# Install iterm2
-echo "Installing iterm2..."
-brew cask install iterm2-nightly
 
 # Install nerd font
 echo "Installing nerd font..."

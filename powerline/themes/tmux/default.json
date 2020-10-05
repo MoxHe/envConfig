@@ -2,10 +2,6 @@
 	"segments": {
 		"right": [
       {
-        "function": "powerline.segments.common.players.spotify",
-        "name": "player"
-      },
-      {
         "function": "powerline.segments.common.bat.battery"
       },
 			{

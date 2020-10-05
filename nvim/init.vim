@@ -70,6 +70,7 @@ Plug 'djoshea/vim-autoread'
 Plug 'mhinz/vim-startify'
 Plug 'alvan/vim-closetag'
 Plug 'lervag/vimtex'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 call plug#end()
 " let g:gruvbox_material_background = 'hard'
@@ -532,5 +533,5 @@ let g:closetag_regions = {
 "
 let g:closetag_shortcut = '>'
 
-" Add > at current position without closing the current tag, default is ''
-"
+" Markdown Prview
+let g:mkdp_markdown_css = '~/.config/nvim/github-markdown.css'
