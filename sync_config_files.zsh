@@ -111,3 +111,11 @@ if [ -f ~/.config/nvim/github-markdown.css ]; then
 fi
 echo "Hard link github-markdown.css"
 ln ./nvim/github-markdown.css ~/.config/nvim/github-markdown.css
+
+# Copy iterm2 preference file com.googlecode.iterm2.plist
+if [ -f ~/Library/Preferences/com.googlecode.iterm2.plist ]; then
+  echo "Rmeoved existing com.googlecode.iterm2.plist"
+  rm ~/Library/Preferences/com.googlecode.iterm2.plist
+fi
+echo "Copy com.googlecode.iterm2.plist"
+cp ./iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
