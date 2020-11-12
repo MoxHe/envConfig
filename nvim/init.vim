@@ -37,8 +37,7 @@ set autoread
 " trailing space is on purpose for the next line
 set fcs=eob:\ 
 
-call plug#begin('~/.config/nvim/plugged')
-
+call plug#begin('~/.config/nvim/plugged') 
 " Plug 'gruvbox-community/gruvbox'
 Plug 'MoxHe/gruvbox'
 Plug 'vim-airline/vim-airline'
@@ -57,7 +56,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'sickill/vim-monokai'
 Plug 'tpope/vim-commentary'
-Plug 'machakann/vim-highlightedyank'
+" Plug 'machakann/vim-highlightedyank'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
@@ -65,7 +64,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'sainnhe/gruvbox-material'
 " Plug 'lilydjwg/colorizer'
 Plug 'haya14busa/is.vim'
-Plug 'dyng/ctrlsf.vim'
+" Plug 'dyng/ctrlsf.vim'
 Plug 'djoshea/vim-autoread'
 Plug 'mhinz/vim-startify'
 Plug 'alvan/vim-closetag'
@@ -102,8 +101,8 @@ let g:airline_theme = 'base16_gruvbox_dark_hard'
 let g:airline_powerline_fonts = 1
 " let g:airline#extensions#tabline#enabled = 1
 let g:indentLine_char_list = ['⎸']
-let g:indentLine_fileType = ['javascript', 'java', 'typescript', 'javascriptreact', 'json', 'yaml', 'typescriptreact', 'zsh', 'vim']
-let g:highlightedyank_highlight_duration = 250
+let g:indentLine_fileType = ['javascript', 'java', 'typescript', 'javascriptreact', 'json', 'yaml', 'typescriptreact', 'zsh', 'vim', 'html', 'python']
+" let g:highlightedyank_highlight_duration = 250
 let g:javascript_plugin_jsdoc = 1
 
 " let java_highlight_functions = 1
@@ -198,6 +197,8 @@ vmap y ygv<Esc>
 " endfunction
 "
 let g:coc_global_extensions = [
+      \ 'coc-docthis',
+      \ 'coc-yank',
       \ 'coc-vimtex',
       \ 'coc-pairs',
       \ 'coc-java',
@@ -219,7 +220,7 @@ let g:coc_global_extensions = [
 
 
 " Coc Explorer
-nmap <silent> <M-n> :CocCommand explorer<CR>
+nmap <silent> <M-e> :CocCommand explorer<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | set guicursor=a:ver25 | q | endif
 
 noremap <silent> <C-c> <Esc>
@@ -247,7 +248,7 @@ inoremap <silent><expr> <TAB>
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-" navigate pop up with <C-j> and <C-k>
+" " navigate pop up with <C-j> and <C-k>
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 
@@ -499,12 +500,12 @@ inoremap <M-f>t <Esc>:CtrlSFToggle<CR>
 " filenames like *.xml, *.html, *.xhtml, ...
 " These are the file extensions where this plugin is enabled.
 "
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.tsx'
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx,*.tsx,*js'
 
 " filenames like *.xml, *.xhtml, ...
 " This will make the list of non-closing tags self-closing in the specified files.
 "
-let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.js'
 
 " filetypes like xml, html, xhtml, ...
 " These are the file types where this plugin is enabled.
@@ -514,7 +515,7 @@ let g:closetag_filetypes = 'html,xhtml,phtml'
 " filetypes like xml, xhtml, ...
 " This will make the list of non-closing tags self-closing in the specified files.
 "
-let g:closetag_xhtml_filetypes = 'xhtml,jsx'
+let g:closetag_xhtml_filetypes = 'xhtml,jsx,*js'
 
 " integer value [0|1]
 " This will make the list of non-closing tags case-sensitive (e.g. `<Link>` will be closed while `<link>` won't.)

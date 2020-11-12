@@ -4,7 +4,8 @@
   "explorer.width": 35,
   "explorer.icon.enableNerdfont": true,
   "explorer.previewAction.onHover": false,
-  "explorer.keyMappings": {
+  "python.jediEnabled": false,
+  "explorer.keyMappings.global": {
     "o": [
       "expandable?",
       ["expanded?", "collapse", "expand"],
@@ -23,5 +24,6 @@
     "u": "cd",
     "U": "gotoParent"
   },
-  "pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"]
+  "pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"],
+  "yank.highlight.duration": 250
 }
