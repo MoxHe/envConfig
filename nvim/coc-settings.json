@@ -25,5 +25,5 @@
     "U": "gotoParent"
   },
   "pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"],
-  "yank.highlight.duration": 250
+  "prettier.singleQuote": true
 }

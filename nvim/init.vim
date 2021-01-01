@@ -56,7 +56,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'sickill/vim-monokai'
 Plug 'tpope/vim-commentary'
-" Plug 'machakann/vim-highlightedyank'
+Plug 'machakann/vim-highlightedyank'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
@@ -102,7 +102,7 @@ let g:airline_powerline_fonts = 1
 " let g:airline#extensions#tabline#enabled = 1
 let g:indentLine_char_list = ['⎸']
 let g:indentLine_fileType = ['javascript', 'java', 'typescript', 'javascriptreact', 'json', 'yaml', 'typescriptreact', 'zsh', 'vim', 'html', 'python']
-" let g:highlightedyank_highlight_duration = 250
+let g:highlightedyank_highlight_duration = 250
 let g:javascript_plugin_jsdoc = 1
 
 " let java_highlight_functions = 1
@@ -198,7 +198,6 @@ vmap y ygv<Esc>
 "
 let g:coc_global_extensions = [
       \ 'coc-docthis',
-      \ 'coc-yank',
       \ 'coc-vimtex',
       \ 'coc-pairs',
       \ 'coc-java',

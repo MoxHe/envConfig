@@ -119,3 +119,35 @@ if [ -f ~/Library/Preferences/com.googlecode.iterm2.plist ]; then
 fi
 echo "Copy com.googlecode.iterm2.plist"
 cp ./iterm2/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
+
+# Hard link ~/.config/yabai/window-focus-on-destroy.zsh
+if [ -f ~/.config/yabai/window-focus-on-destroy.zsh ]; then
+  echo "Rmeoved existing ~/.config/yabai/window-focus-on-destroy.zsh"
+  rm ~/.config/yabai/window-focus-on-destroy.zsh
+fi
+echo "Hard link window-focus-on-destroy.zsh"
+ln ./yabai/window-focus-on-destroy.zsh ~/.config/yabai/window-focus-on-destroy.zsh
+
+# Hard link ~/.config/skhd/skhdrc
+if [ -f ~/.config/skhd/skhdrc ]; then
+  echo "Rmeoved existing ~/.config/skhd/skhdrc"
+  rm ~/.config/skhd/skhdrc
+fi
+echo "Hard link skhdrc"
+ln ./skhd/skhdrc ~/.config/skhd/skhdrc
+
+# Hard link ~/.config/limelight/limelightrc
+if [ -f ~/.config/limelight/limelightrc ]; then
+  echo "Rmeoved existing ~/.config/limelight/limelightrc"
+  rm ~/.config/limelight/limelightrc
+fi
+echo "Hard link limelightrc"
+ln ./limelight/limelightrc ~/.config/limelight/limelightrc
+
+# Hard link ~/.config/yabai/yabairc
+if [ -f ~/.config/yabai/yabairc ]; then
+  echo "Rmeoved existing ~/.config/yabai/yabairc"
+  rm ~/.config/yabai/yabairc
+fi
+echo "Hard link yabairc"
+ln ./yabai/yabairc ~/.config/yabai/yabairc

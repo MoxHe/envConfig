@@ -109,6 +109,48 @@ mkdir -p ~/.config/bat/config
 mkdir -p ~/.config/bat/themes
 mkdir -p ~/.config/powerline/themes/tmux
 mkdir -p ~/.config/powerline/colorschemes/tmux
+mkdir -p ~/.config/skhd
+mkdir -p ~/.config/yabai
+mkdir -p ~/.config/limelight
+
+# install yabai
+brew install koekeishiya/formulae/yabai
+# install jq (Lightweight and flexible command-line JSON processor)
+brew install jq
+# install skhd
+brew install koekeishiya/formulae/skhd
+
+# Hard link ~/.config/yabai/window-focus-on-destroy.zsh
+if [ -f ~/.config/yabai/window-focus-on-destroy.zsh ]; then
+  echo "Rmeoved existing ~/.config/yabai/window-focus-on-destroy.zsh"
+  rm ~/.config/yabai/window-focus-on-destroy.zsh
+fi
+echo "Hard link window-focus-on-destroy.zsh"
+ln ./yabai/window-focus-on-destroy.zsh ~/.config/yabai/window-focus-on-destroy.zsh
+
+# Hard link ~/.config/skhd/skhdrc
+if [ -f ~/.config/skhd/skhdrc ]; then
+  echo "Rmeoved existing ~/.config/skhd/skhdrc"
+  rm ~/.config/skhd/skhdrc
+fi
+echo "Hard link skhdrc"
+ln ./skhd/skhdrc ~/.config/skhd/skhdrc
+
+# Hard link ~/.config/limelight/limelightrc
+if [ -f ~/.config/limelight/limelightrc ]; then
+  echo "Rmeoved existing ~/.config/limelight/limelightrc"
+  rm ~/.config/limelight/limelightrc
+fi
+echo "Hard link limelightrc"
+ln ./limelight/limelightrc ~/.config/limelight/limelightrc
+
+# Hard link ~/.config/yabai/yabairc
+if [ -f ~/.config/yabai/yabairc ]; then
+  echo "Rmeoved existing ~/.config/yabai/yabairc"
+  rm ~/.config/yabai/yabairc
+fi
+echo "Hard link yabairc"
+ln ./yabai/yabairc ~/.config/yabai/yabairc
 
 # Hard link ~/.tmux.conf
 if [ -f ~/.tmux.conf ]; then
@@ -239,6 +281,14 @@ echo "Updating terminfo to add abilities of showing italics and curly underline"
 tic -x ./terminfo/xterm-256color.terminfo
 tic -x ./terminfo/tmux.terminfo
 tic -x ./terminfo/tmux-256color.terminfo
+
+# install limelight
+cd ~
+git clone https://github.com/koekeishiya/limelight.git
+cd limelight
+make
+ln -s ~/limelight/bin/limelight /usr/local/bin/limelight
+cd ~
 
 echo "\nDone!"
 
