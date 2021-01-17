@@ -18,7 +18,13 @@ cmd + alt - k : yabai -m window --resize bottom:0:-70 || yabai -m window --resiz
 cmd + alt - j : yabai -m window --resize bottom:0:70 || yabai -m window --resize top:0:70
 cmd + alt - l : yabai -m window --resize right:70:0 || yabai -m window --resize left:70:0
 
-# ctrl + cmd - g: open -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
+ctrl + cmd - g: open -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
+ctrl + cmd - s: open -a /Applications/Spotify.app
+ctrl + cmd - v: open -a /Users/moxiaohe/Applications/Visual Studio Code.app
+ctrl + cmd - i: open -a /Users/moxiaohe/Applications/iTerm.app
+ctrl + cmd - p: open -a /System/Applications/Preview.app
+ctrl + cmd - g: open -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
+ctrl + cmd - w: open -a /Applications/WeChat.app
 
 # rotate tree 90
 ctrl + alt - return : yabai -m space --rotate 90
