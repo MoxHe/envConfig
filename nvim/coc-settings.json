@@ -25,5 +25,6 @@
     "U": "gotoParent"
   },
   "pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"],
-  "prettier.singleQuote": true
+  "prettier.singleQuote": true,
+  "clangd.path": "/Users/moxiaohe/.config/coc/extensions/coc-clangd-data/install/11.0.0/clangd_11.0.0/bin/clangd"
 }

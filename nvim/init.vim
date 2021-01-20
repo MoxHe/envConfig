@@ -101,7 +101,7 @@ let g:airline_theme = 'base16_gruvbox_dark_hard'
 let g:airline_powerline_fonts = 1
 " let g:airline#extensions#tabline#enabled = 1
 let g:indentLine_char_list = ['⎸']
-let g:indentLine_fileType = ['javascript', 'java', 'typescript', 'javascriptreact', 'json', 'yaml', 'typescriptreact', 'zsh', 'vim', 'html', 'python']
+let g:indentLine_fileType = ['javascript', 'java', 'typescript', 'javascriptreact', 'json', 'yaml', 'typescriptreact', 'zsh', 'vim', 'html', 'python', 'c']
 let g:highlightedyank_highlight_duration = 250
 let g:javascript_plugin_jsdoc = 1
 
@@ -197,6 +197,7 @@ vmap y ygv<Esc>
 " endfunction
 "
 let g:coc_global_extensions = [
+      \ 'coc-clangd',
       \ 'coc-docthis',
       \ 'coc-vimtex',
       \ 'coc-pairs',
