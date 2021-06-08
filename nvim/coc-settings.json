@@ -4,7 +4,6 @@
   "explorer.width": 35,
   "explorer.icon.enableNerdfont": true,
   "explorer.previewAction.onHover": false,
-  "python.jediEnabled": false,
   "explorer.keyMappings.global": {
     "o": [
       "expandable?",

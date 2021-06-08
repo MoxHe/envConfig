@@ -213,9 +213,9 @@ let g:coc_global_extensions = [
       \ 'coc-xml',
       \ 'coc-explorer',
       \ 'coc-prettier',
-      \ 'coc-python',
       \ 'coc-tsserver',
-      \ 'coc-sh'
+      \ 'coc-sh',
+      \ 'coc-pyright'
       \ ]
 
 
