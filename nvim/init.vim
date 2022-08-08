@@ -139,63 +139,6 @@ vmap y ygv<Esc>
 " noremap x "_x
 " noremap X "_X
 
-
-" " nerdtree configs
-" " close nerdtree when automatically when no buff
-" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" " limit nerdtree syntax highlight to improve performance
-" let g:NERDTreeLimitedSyntax = 1
-" " get rid of press ? for help at the top
-" let NERDTreeMinimalUI=1
-" " set nerd tree line number
-" let NERDTreeShowLineNumbers=1
-
-" let g:NERDTreeMapJumpNextSibling="☻"
-" let g:NERDTreeMapJumpPrevSibling="☺"
-
-" let g:NERDTreeIndicatorMapCustom = {
-"     \ "Modified"  : "M",
-"     \ "Staged"    : "S",
-"     \ "Untracked" : "?",
-"     \ "Renamed"   : "R",
-"     \ "Unmerged"  : "U",
-"     \ "Deleted"   : "D",
-"     \ "Dirty"     : "✗",
-"     \ "Clean"     : "✔︎",
-"     \ 'Ignored'   : '!',
-"     \ "Unknown"   : " "
-"     \ }
-
-" " check if nerdtree is open
-" function! s:isNERDTreeOpen()
-"   return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
-" endfunction
-
-" " calls NERDTreeFind iff NERDTree is active, current window contains a modifiable file, and we're not in vimdiff
-" function! s:syncTree()
-"   if &modifiable && s:isNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff && bufname('%') !~# 'NERD_tree'
-"     try
-"       NERDTreeFind
-"       if bufname('%') =~# 'NERD_tree'
-"         wincmd p
-"       endif
-"     endtry
-"   endif
-" endfunction
-
-" autocmd BufEnter * silent! call s:syncTree()
-
-" nmap <silent> <M-n> :call CustomizedNERDTreeToggle()<cr>
-
-" function! CustomizedNERDTreeToggle()
-"   " If NERDTree is open in the current buffer
-"   if (s:isNERDTreeOpen())
-"     exe ":NERDTreeClose"
-"   else
-"     exe ":NERDTreeFind"
-"   endif
-" endfunction
-"
 let g:coc_global_extensions = [
       \ 'coc-clangd',
       \ 'coc-docthis',
@@ -239,32 +182,26 @@ vnoremap < <gv
 vnoremap > >gv
 noremap Y y$
 
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+  function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+  endfunction
+
+  " Insert <tab> when previous text is space, refresh completion if not.
+  inoremap <silent><expr> <TAB>
+	\ coc#pum#visible() ? coc#pum#next(1):
+	\ <SID>check_back_space() ? "\<Tab>" :
+	\ coc#refresh()
+  inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 " " navigate pop up with <C-j> and <C-k>
-inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
-inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
-" position. Coc only does snippet and additional edit on confirm.
-" <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
-if exists('*complete_info')
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-else
-  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-endif
+  inoremap <silent><expr> <C-n> coc#pum#visible() ? coc#pum#next(1) : "\<C-n>"
+  inoremap <silent><expr> <C-p> coc#pum#visible() ? coc#pum#prev(1) : "\<C-p>"
+  inoremap <silent><expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-j>"
+  inoremap <silent><expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-k>"
+  inoremap <silent><expr> <down> coc#pum#visible() ? coc#pum#next(0) : "\<down>"
+  inoremap <silent><expr> <up> coc#pum#visible() ? coc#pum#prev(0) : "\<up>"
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
@@ -348,7 +285,8 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " add an additional line in () or [] or so on
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+  inoremap <silent><expr> <CR> coc#pum#visible() ? coc#_select_confirm()
+				\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 " Use alt + hjkl to resize windows
 nnoremap <silent> <M-j>    :resize +2<CR>
 nnoremap <silent> <M-k>    :resize -2<CR>

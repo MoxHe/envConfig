@@ -90,7 +90,7 @@ ln ./zsh/.zshenv ~/.zshenv
 
 # Install nvm
 echo "Installing nvm..."
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | sh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | sh
 
 # Install node.js
 echo "Installing Node.js..."
@@ -275,7 +275,7 @@ brew cask install java11
 # Install nerd font
 echo "Installing nerd font..."
 brew tap homebrew/cask-fonts
-brew cask install font-hack-nerd-font
+brew install --cask font-hack-nerd-font
 
 echo "Updating terminfo to add abilities of showing italics and curly underline"
 tic -x ./terminfo/xterm-256color.terminfo
