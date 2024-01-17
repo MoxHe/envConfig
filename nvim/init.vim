@@ -236,6 +236,9 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
+xmap <leader>m  :s#[\-_]\([0-1a-zA-Z]\)#\u\1#g<CR>
+nmap <leader>m  :s#[\-_]\([0-1a-zA-Z]\)#\u\1#g<CR>
+
 augroup mygroup
   autocmd!
   " Setup formatexpr specified filetype(s).

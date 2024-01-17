@@ -196,4 +196,5 @@ alias r="ranger"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+eval "$(jenv init -)"
+export NEXUS_PROXY_URL=https://nexus.intuit.com/nexus
